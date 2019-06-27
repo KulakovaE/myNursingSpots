@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CE022C4D62100735860 /* AppDelegate.swift */; };
-		18D93CE322C4D62100735860 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CE222C4D62100735860 /* ViewController.swift */; };
 		18D93CE622C4D62100735860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D93CE422C4D62100735860 /* Main.storyboard */; };
 		18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CE722C4D62100735860 /* myNursingSpots.xcdatamodeld */; };
 		18D93CEB22C4D62100735860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D93CEA22C4D62100735860 /* Assets.xcassets */; };
 		18D93CEE22C4D62100735860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D93CEC22C4D62100735860 /* LaunchScreen.storyboard */; };
+		18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CF522C4D7AF00735860 /* MapViewController.swift */; };
+		18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CF722C4D7E700735860 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18D93CDD22C4D62100735860 /* myNursingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNursingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D93CE022C4D62100735860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18D93CE222C4D62100735860 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18D93CE522C4D62100735860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18D93CE822C4D62100735860 /* myNursingSpots.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myNursingSpots.xcdatamodel; sourceTree = "<group>"; };
 		18D93CEA22C4D62100735860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D93CED22C4D62100735860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D93CEF22C4D62100735860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D93CF522C4D7AF00735860 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		18D93CF722C4D7E700735860 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				18D93CE022C4D62100735860 /* AppDelegate.swift */,
-				18D93CE222C4D62100735860 /* ViewController.swift */,
 				18D93CE422C4D62100735860 /* Main.storyboard */,
+				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
+				18D93CF722C4D7E700735860 /* ListViewController.swift */,
 				18D93CEA22C4D62100735860 /* Assets.xcassets */,
 				18D93CEC22C4D62100735860 /* LaunchScreen.storyboard */,
 				18D93CEF22C4D62100735860 /* Info.plist */,
@@ -139,8 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */,
-				18D93CE322C4D62100735860 /* ViewController.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
+				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,
+				18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
