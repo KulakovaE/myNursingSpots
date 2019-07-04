@@ -15,6 +15,10 @@
 		18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CF522C4D7AF00735860 /* MapViewController.swift */; };
 		18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CF722C4D7E700735860 /* ListViewController.swift */; };
 		18D93CFB22C4DAEE00735860 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D93CFA22C4DAEE00735860 /* MapKit.framework */; };
+		18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CFE22CC9CD300735860 /* ComposerViewController.swift */; };
+		18D93D0522CCA58100735860 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93D0422CCA58100735860 /* DataController.swift */; };
+		18D93D0722CCAA5F00735860 /* SpotAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93D0622CCAA5F00735860 /* SpotAnnotation.swift */; };
+		18D93D0E22CCDB4F00735860 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93D0D22CCDB4F00735860 /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		18D93CF522C4D7AF00735860 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18D93CF722C4D7E700735860 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		18D93CFA22C4DAEE00735860 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		18D93CFE22CC9CD300735860 /* ComposerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = "<group>"; };
+		18D93D0422CCA58100735860 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		18D93D0622CCAA5F00735860 /* SpotAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotAnnotation.swift; sourceTree = "<group>"; };
+		18D93D0D22CCDB4F00735860 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +72,11 @@
 			children = (
 				18D93CE022C4D62100735860 /* AppDelegate.swift */,
 				18D93CE422C4D62100735860 /* Main.storyboard */,
-				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
-				18D93CF722C4D7E700735860 /* ListViewController.swift */,
-				18D93CEA22C4D62100735860 /* Assets.xcassets */,
-				18D93CEC22C4D62100735860 /* LaunchScreen.storyboard */,
 				18D93CEF22C4D62100735860 /* Info.plist */,
-				18D93CE722C4D62100735860 /* myNursingSpots.xcdatamodeld */,
+				18D93D0022CCA4B000735860 /* Model */,
+				18D93D0222CCA4E300735860 /* View */,
+				18D93D0322CCA4ED00735860 /* Controller */,
+				18D93D0122CCA4D100735860 /* Assets */,
 			);
 			path = myNursingSpots;
 			sourceTree = "<group>";
@@ -80,6 +87,43 @@
 				18D93CFA22C4DAEE00735860 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18D93D0022CCA4B000735860 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18D93CE722C4D62100735860 /* myNursingSpots.xcdatamodeld */,
+				18D93D0622CCAA5F00735860 /* SpotAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18D93D0122CCA4D100735860 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				18D93CEA22C4D62100735860 /* Assets.xcassets */,
+				18D93CEC22C4D62100735860 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		18D93D0222CCA4E300735860 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18D93D0322CCA4ED00735860 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
+				18D93CF722C4D7E700735860 /* ListViewController.swift */,
+				18D93CFE22CC9CD300735860 /* ComposerViewController.swift */,
+				18D93D0422CCA58100735860 /* DataController.swift */,
+				18D93D0D22CCDB4F00735860 /* SpinnerViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */,
+				18D93D0522CCA58100735860 /* DataController.swift in Sources */,
+				18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
 				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,
 				18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */,
+				18D93D0722CCAA5F00735860 /* SpotAnnotation.swift in Sources */,
+				18D93D0E22CCDB4F00735860 /* SpinnerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
