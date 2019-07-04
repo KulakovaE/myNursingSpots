@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */; };
 		18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CE022C4D62100735860 /* AppDelegate.swift */; };
 		18D93CE622C4D62100735860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D93CE422C4D62100735860 /* Main.storyboard */; };
 		18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18D93CE722C4D62100735860 /* myNursingSpots.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		18D93CDD22C4D62100735860 /* myNursingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNursingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D93CE022C4D62100735860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D93CE522C4D62100735860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
 				18D93CF722C4D7E700735860 /* ListViewController.swift */,
+				1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */,
 				18D93CFE22CC9CD300735860 /* ComposerViewController.swift */,
 				18D93D0422CCA58100735860 /* DataController.swift */,
 				18D93D0D22CCDB4F00735860 /* SpinnerViewController.swift */,
@@ -205,6 +208,7 @@
 				18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */,
 				18D93D0522CCA58100735860 /* DataController.swift in Sources */,
 				18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */,
+				1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
 				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,
 				18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */,

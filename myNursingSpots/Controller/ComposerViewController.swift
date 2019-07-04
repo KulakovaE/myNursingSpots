@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class ComposerViewController: UIViewController {
 
+    var placemark: MKPlacemark?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

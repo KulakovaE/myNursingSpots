@@ -11,6 +11,10 @@ import MapKit
 import CoreLocation
 import CoreData
 
+protocol HandleMapSearch {
+    func didSelectResult(placemark: MKPlacemark)
+}
+
 class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
@@ -18,17 +22,45 @@ class MapViewController: UIViewController {
     let regionInMeters: Double = 1000
     var longPressGestureRecognizer: UILongPressGestureRecognizer?
     var spots: [Spot] = []
+    var resultSearchController: UISearchController? = nil
+    var spotCandidate: MKPlacemark? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkLocationServices()
         self.spots = fetchData()
+        setupResultSearchController()
+        setupSearchBar()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayData(spots: self.spots)
+    }
+    
+    func setupResultSearchController() {
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
+        self.resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        self.resultSearchController?.searchResultsUpdater = locationSearchTable
+        self.resultSearchController?.hidesNavigationBarDuringPresentation = false
+        self.resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+    }
+    
+    func setupSearchBar() {
+        guard let resultSearchController = resultSearchController else { return }
+        navigationItem.searchController = resultSearchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        let searchBar = resultSearchController.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController.searchBar
+       
+        
     }
     
     func fetchData() -> [Spot] {
@@ -130,4 +162,13 @@ extension MapViewController: CLLocationManagerDelegate {
        checkLocationAuthorization()
     }
     
+}
+
+extension MapViewController: HandleMapSearch {
+    func didSelectResult(placemark: MKPlacemark) {
+        if let composerViewController = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
+            composerViewController.placemark = placemark
+            navigationController?.pushViewController(composerViewController, animated: true)
+        }
+    }
 }
