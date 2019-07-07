@@ -15,7 +15,19 @@ class ComposerViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var addImagesButton: UIButton!
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var notesAndRemarksTextField: UITextField!
+    @IBOutlet var babyFacilitiesRating: CosmosView!
+    @IBOutlet var hygieneRating: CosmosView!
+    @IBOutlet var comfortAndPrivacyRating: CosmosView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var stackView: UIStackView!
     
+    
+    
+    @IBOutlet var heightConstraint: NSLayoutConstraint!
+    @IBOutlet var widthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,4 +47,15 @@ class ComposerViewController: UIViewController {
         annotation.coordinate = placemark.coordinate
         mapView.addAnnotation(annotation)
     }
+    
+    @IBAction func addImages(_ sender: Any) {
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //scrollView.contentSize = CGSize(width: stackView.frame.width, height: stackView.frame.height)
+    }
 }
+
+
