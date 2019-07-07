@@ -133,32 +133,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-lf-Uhw" customClass="CosmosView" customModule="myNursingSpots">
-                                <rect key="frame" x="16" y="354.5" width="382" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Facilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-9E-bnP">
-                                <rect key="frame" x="16" y="332.5" width="382" height="18"/>
+                                <rect key="frame" x="16" y="524.5" width="382" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exr-Xi-DMl" customClass="CosmosView" customModule="myNursingSpots">
-                                <rect key="frame" x="16" y="422.5" width="382" height="30"/>
+                                <rect key="frame" x="16" y="614.5" width="382" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
@@ -176,13 +158,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hygiene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKi-VQ-da0">
-                                <rect key="frame" x="16" y="400.5" width="382" height="18"/>
+                                <rect key="frame" x="16" y="592.5" width="382" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pny-4U-Hv0" customClass="CosmosView" customModule="myNursingSpots">
-                                <rect key="frame" x="16" y="490.5" width="382" height="30"/>
+                                <rect key="frame" x="16" y="682.5" width="382" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
@@ -200,17 +182,62 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comfort &amp; Privacy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-PS-ib3">
-                                <rect key="frame" x="16" y="468.5" width="382" height="18"/>
+                                <rect key="frame" x="16" y="660.5" width="382" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes &amp; Remarks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-Nr-aWs">
-                                <rect key="frame" x="16" y="552.5" width="382" height="30"/>
+                                <rect key="frame" x="16" y="478.5" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NbV-6e-gex">
+                                <rect key="frame" x="0.0" y="342.5" width="414" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="nEO-kA-NT3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NGH-o4-Veo">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c1D-nw-C0r">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzB-fh-IHp">
+                                <rect key="frame" x="303" y="304.5" width="95" height="30"/>
+                                <state key="normal" title="+ Add images"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-lf-Uhw" customClass="CosmosView" customModule="myNursingSpots">
+                                <rect key="frame" x="16" y="546.5" width="382" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -218,8 +245,9 @@
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Gvg-PS-ib3" secondAttribute="trailing" constant="16" id="5DK-AS-FW0"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="0nD-lf-Uhw" secondAttribute="trailing" constant="16" id="5VP-GX-N3d"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="FKi-VQ-da0" secondAttribute="trailing" constant="16" id="5yg-8b-gA7"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="DzB-fh-IHp" secondAttribute="trailing" constant="16" id="AAl-eT-eEF"/>
+                            <constraint firstItem="Hje-Nr-aWs" firstAttribute="top" secondItem="NbV-6e-gex" secondAttribute="bottom" constant="16" id="Ab8-68-ace"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="EbI-Fz-0Xv" secondAttribute="trailing" constant="16" id="BOz-nK-p09"/>
-                            <constraint firstItem="Hje-Nr-aWs" firstAttribute="top" secondItem="pny-4U-Hv0" secondAttribute="bottom" constant="32" id="CrQ-gU-3OZ"/>
                             <constraint firstItem="UFc-Zi-fc9" firstAttribute="top" secondItem="tVW-H8-VED" secondAttribute="bottom" constant="8" id="JiS-FJ-W1e"/>
                             <constraint firstItem="vB0-9E-bnP" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="LtC-Bn-ZKR"/>
                             <constraint firstItem="pny-4U-Hv0" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="OAm-sj-Tfv"/>
@@ -227,27 +255,37 @@
                             <constraint firstItem="Gvg-PS-ib3" firstAttribute="top" secondItem="Exr-Xi-DMl" secondAttribute="bottom" constant="16" id="Pyp-TW-roC"/>
                             <constraint firstItem="Exr-Xi-DMl" firstAttribute="top" secondItem="FKi-VQ-da0" secondAttribute="bottom" constant="4" id="R25-iC-3Xb"/>
                             <constraint firstItem="EbI-Fz-0Xv" firstAttribute="top" secondItem="UFc-Zi-fc9" secondAttribute="bottom" constant="6" id="RRK-Ra-eNu"/>
-                            <constraint firstItem="vB0-9E-bnP" firstAttribute="top" secondItem="EbI-Fz-0Xv" secondAttribute="bottom" constant="32" id="RSO-Gf-VQF"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="top" secondItem="APv-nk-88N" secondAttribute="top" id="STW-10-MDC"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="trailing" secondItem="APv-nk-88N" secondAttribute="trailing" id="TIl-AP-6Rz"/>
                             <constraint firstItem="UFc-Zi-fc9" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="ThJ-4X-EcR"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="vB0-9E-bnP" secondAttribute="trailing" constant="16" id="UJk-st-sBj"/>
+                            <constraint firstItem="vB0-9E-bnP" firstAttribute="top" secondItem="Hje-Nr-aWs" secondAttribute="bottom" constant="16" id="WvR-Hg-jdv"/>
                             <constraint firstItem="tVW-H8-VED" firstAttribute="top" secondItem="APv-nk-88N" secondAttribute="top" id="YaT-ij-H6G"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" id="aO5-T5-of6"/>
                             <constraint firstItem="tVW-H8-VED" firstAttribute="trailing" secondItem="APv-nk-88N" secondAttribute="trailing" id="aaw-va-UTK"/>
                             <constraint firstItem="tVW-H8-VED" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" id="amY-xX-Alh"/>
                             <constraint firstItem="0nD-lf-Uhw" firstAttribute="top" secondItem="vB0-9E-bnP" secondAttribute="bottom" constant="4" id="cKJ-fE-PYp"/>
                             <constraint firstItem="FKi-VQ-da0" firstAttribute="top" secondItem="0nD-lf-Uhw" secondAttribute="bottom" constant="16" id="eDK-0v-f7C"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="UFc-Zi-fc9" secondAttribute="trailing" constant="16" id="eJy-Ih-tse"/>
+                            <constraint firstItem="NbV-6e-gex" firstAttribute="top" secondItem="DzB-fh-IHp" secondAttribute="bottom" constant="8" id="eXv-1F-FGQ"/>
+                            <constraint firstItem="DzB-fh-IHp" firstAttribute="top" secondItem="EbI-Fz-0Xv" secondAttribute="bottom" constant="4" id="erh-D0-HWw"/>
                             <constraint firstItem="EbI-Fz-0Xv" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="fWj-5X-3Ys"/>
                             <constraint firstItem="FKi-VQ-da0" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="fyv-u3-CkQ"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Hje-Nr-aWs" secondAttribute="trailing" constant="16" id="mvl-Rz-mmn"/>
+                            <constraint firstItem="DzB-fh-IHp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="nhM-9E-Nlp"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Exr-Xi-DMl" secondAttribute="trailing" constant="16" id="qTF-0S-YFB"/>
                             <constraint firstItem="Hje-Nr-aWs" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="rJ1-d7-n64"/>
+                            <constraint firstItem="NbV-6e-gex" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" id="sXy-mH-uGp"/>
                             <constraint firstItem="Gvg-PS-ib3" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="tDz-Nc-jEn"/>
+                            <constraint firstItem="NbV-6e-gex" firstAttribute="trailing" secondItem="APv-nk-88N" secondAttribute="trailing" id="tbZ-CT-BaY"/>
                             <constraint firstItem="pny-4U-Hv0" firstAttribute="top" secondItem="Gvg-PS-ib3" secondAttribute="bottom" constant="4" id="tvb-Mv-GLv"/>
                             <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="pny-4U-Hv0" secondAttribute="trailing" constant="16" id="xsi-9x-kmg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="APv-nk-88N"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XJY-cx-eZZ"/>
+                    <navigationItem key="navigationItem" id="XJY-cx-eZZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TbC-TN-8pO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="EbI-Fz-0Xv" id="NzG-UZ-Pcr"/>
                         <outlet property="mapView" destination="tVW-H8-VED" id="gU2-sy-FBV"/>
