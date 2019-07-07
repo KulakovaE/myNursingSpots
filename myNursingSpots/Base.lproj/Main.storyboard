@@ -111,13 +111,152 @@
                     <view key="view" contentMode="scaleToFill" id="7fX-I7-Jgp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-H8-VED">
+                                <rect key="frame" x="0.0" y="88" width="414" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="IkZ-ZI-ItR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="zc3-fC-Ep5" id="SJ8-zZ-Cxb"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFc-Zi-fc9">
+                                <rect key="frame" x="16" y="256" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbI-Fz-0Xv">
+                                <rect key="frame" x="16" y="282.5" width="382" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-lf-Uhw" customClass="CosmosView" customModule="myNursingSpots">
+                                <rect key="frame" x="16" y="354.5" width="382" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Facilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-9E-bnP">
+                                <rect key="frame" x="16" y="332.5" width="382" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exr-Xi-DMl" customClass="CosmosView" customModule="myNursingSpots">
+                                <rect key="frame" x="16" y="422.5" width="382" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hygiene" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKi-VQ-da0">
+                                <rect key="frame" x="16" y="400.5" width="382" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pny-4U-Hv0" customClass="CosmosView" customModule="myNursingSpots">
+                                <rect key="frame" x="16" y="490.5" width="382" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comfort &amp; Privacy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-PS-ib3">
+                                <rect key="frame" x="16" y="468.5" width="382" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes &amp; Remarks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-Nr-aWs">
+                                <rect key="frame" x="16" y="552.5" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Exr-Xi-DMl" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="1yW-tM-BuG"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Gvg-PS-ib3" secondAttribute="trailing" constant="16" id="5DK-AS-FW0"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="0nD-lf-Uhw" secondAttribute="trailing" constant="16" id="5VP-GX-N3d"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="FKi-VQ-da0" secondAttribute="trailing" constant="16" id="5yg-8b-gA7"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="EbI-Fz-0Xv" secondAttribute="trailing" constant="16" id="BOz-nK-p09"/>
+                            <constraint firstItem="Hje-Nr-aWs" firstAttribute="top" secondItem="pny-4U-Hv0" secondAttribute="bottom" constant="32" id="CrQ-gU-3OZ"/>
+                            <constraint firstItem="UFc-Zi-fc9" firstAttribute="top" secondItem="tVW-H8-VED" secondAttribute="bottom" constant="8" id="JiS-FJ-W1e"/>
+                            <constraint firstItem="vB0-9E-bnP" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="LtC-Bn-ZKR"/>
+                            <constraint firstItem="pny-4U-Hv0" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="OAm-sj-Tfv"/>
+                            <constraint firstItem="0nD-lf-Uhw" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="OcE-OD-Rbj"/>
+                            <constraint firstItem="Gvg-PS-ib3" firstAttribute="top" secondItem="Exr-Xi-DMl" secondAttribute="bottom" constant="16" id="Pyp-TW-roC"/>
+                            <constraint firstItem="Exr-Xi-DMl" firstAttribute="top" secondItem="FKi-VQ-da0" secondAttribute="bottom" constant="4" id="R25-iC-3Xb"/>
+                            <constraint firstItem="EbI-Fz-0Xv" firstAttribute="top" secondItem="UFc-Zi-fc9" secondAttribute="bottom" constant="6" id="RRK-Ra-eNu"/>
+                            <constraint firstItem="vB0-9E-bnP" firstAttribute="top" secondItem="EbI-Fz-0Xv" secondAttribute="bottom" constant="32" id="RSO-Gf-VQF"/>
+                            <constraint firstItem="UFc-Zi-fc9" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="ThJ-4X-EcR"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="vB0-9E-bnP" secondAttribute="trailing" constant="16" id="UJk-st-sBj"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="top" secondItem="APv-nk-88N" secondAttribute="top" id="YaT-ij-H6G"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="trailing" secondItem="APv-nk-88N" secondAttribute="trailing" id="aaw-va-UTK"/>
+                            <constraint firstItem="tVW-H8-VED" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" id="amY-xX-Alh"/>
+                            <constraint firstItem="0nD-lf-Uhw" firstAttribute="top" secondItem="vB0-9E-bnP" secondAttribute="bottom" constant="4" id="cKJ-fE-PYp"/>
+                            <constraint firstItem="FKi-VQ-da0" firstAttribute="top" secondItem="0nD-lf-Uhw" secondAttribute="bottom" constant="16" id="eDK-0v-f7C"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="UFc-Zi-fc9" secondAttribute="trailing" constant="16" id="eJy-Ih-tse"/>
+                            <constraint firstItem="EbI-Fz-0Xv" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="fWj-5X-3Ys"/>
+                            <constraint firstItem="FKi-VQ-da0" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="fyv-u3-CkQ"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Hje-Nr-aWs" secondAttribute="trailing" constant="16" id="mvl-Rz-mmn"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="Exr-Xi-DMl" secondAttribute="trailing" constant="16" id="qTF-0S-YFB"/>
+                            <constraint firstItem="Hje-Nr-aWs" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="rJ1-d7-n64"/>
+                            <constraint firstItem="Gvg-PS-ib3" firstAttribute="leading" secondItem="APv-nk-88N" secondAttribute="leading" constant="16" id="tDz-Nc-jEn"/>
+                            <constraint firstItem="pny-4U-Hv0" firstAttribute="top" secondItem="Gvg-PS-ib3" secondAttribute="bottom" constant="4" id="tvb-Mv-GLv"/>
+                            <constraint firstItem="APv-nk-88N" firstAttribute="trailing" secondItem="pny-4U-Hv0" secondAttribute="trailing" constant="16" id="xsi-9x-kmg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="APv-nk-88N"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XJY-cx-eZZ"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="EbI-Fz-0Xv" id="NzG-UZ-Pcr"/>
+                        <outlet property="mapView" destination="tVW-H8-VED" id="gU2-sy-FBV"/>
+                        <outlet property="nameLabel" destination="UFc-Zi-fc9" id="2XG-Jp-DtU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgX-Zg-QId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="316"/>
+            <point key="canvasLocation" x="2410.144927536232" y="315.40178571428572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="swm-om-RWs">
@@ -193,6 +332,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQf-pd-G4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-326.08695652173918" y="316.74107142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VWI-AH-yJJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XL9-zf-z1I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bFd-DD-wo3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zc3-fC-Ep5" kind="relationship" relationship="rootViewController" id="o4s-qh-R6Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrD-0p-KA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500.0000000000002" y="315.40178571428572"/>
         </scene>
     </scenes>
 </document>
