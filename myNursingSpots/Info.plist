@@ -4,6 +4,10 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>In order to use the app, we need your location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>In order to add image to the review, we need your permission.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>In order to add image to the review, we need your permission.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
