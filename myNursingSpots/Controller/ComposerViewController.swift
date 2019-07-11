@@ -17,26 +17,32 @@ class ComposerViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var addImagesButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var notesAndRemarksTextField: UITextField!
     @IBOutlet var babyFacilitiesRating: CosmosView!
     @IBOutlet var hygieneRating: CosmosView!
     @IBOutlet var comfortAndPrivacyRating: CosmosView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     var selectedImages: [UIImage] = []
-    
-    
-    
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
-    @IBOutlet var widthConstraint: NSLayoutConstraint!
-    
+    @IBOutlet var noteAndRemarksTextView: UITextView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let placemark = placemark else {return}
         nameLabel.text = placemark.name
         addressLabel.text = placemark.parseAddress()
         configureMapView(placemark: placemark)
+        setupNotesAndRemarksTextView()
 
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.collectionView.reloadData()
+    }
+    
+   private func setupNotesAndRemarksTextView() {
+        self.noteAndRemarksTextView.layer.borderWidth = 1
+        self.noteAndRemarksTextView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func configureMapView(placemark: MKPlacemark) {

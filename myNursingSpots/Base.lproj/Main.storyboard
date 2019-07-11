@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="584.05797101449275" y="316.74107142857139"/>
         </scene>
-        <!--Map View Controller-->
+        <!--My Nursing Spots-->
         <scene sceneID="xJg-w9-iY2">
             <objects>
                 <viewController id="yLK-6H-mLw" customClass="MapViewController" customModule="myNursingSpots" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gfx-jG-b9Y"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="qu8-AW-jov"/>
+                    <navigationItem key="navigationItem" title="My Nursing Spots" largeTitleDisplayMode="never" id="qu8-AW-jov"/>
                     <connections>
                         <outlet property="mapView" destination="1W4-rF-2P8" id="cRj-rv-5Bf"/>
                     </connections>
@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nzd-gn-AkL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KAd-gc-EZy" userLabel="MapViewStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
@@ -233,19 +233,28 @@
                                                 </connections>
                                             </collectionView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uVr-m5-8hn" userLabel="NotesAndRemarksStackView">
-                                                <rect key="frame" x="0.0" y="420.5" width="414" height="46"/>
+                                                <rect key="frame" x="0.0" y="420.5" width="414" height="86.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes &amp; Remarks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hje-Nr-aWs">
-                                                        <rect key="frame" x="16" y="8" width="382" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes &amp; Remarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caN-6Z-ZCI">
+                                                        <rect key="frame" x="16" y="8" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eor-mg-8ea">
+                                                        <rect key="frame" x="16" y="28.5" width="382" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="GSZ-3Y-UX5"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                                    </textField>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                                    </textView>
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kfy-FA-mqu" userLabel="RatingsStackView">
-                                                <rect key="frame" x="0.0" y="474.5" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="515" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Facilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-9E-bnP">
                                                         <rect key="frame" x="16" y="8" width="382" height="18"/>
@@ -356,7 +365,7 @@
                         <outlet property="hygieneRating" destination="Exr-Xi-DMl" id="iCe-DA-N0d"/>
                         <outlet property="mapView" destination="tVW-H8-VED" id="gU2-sy-FBV"/>
                         <outlet property="nameLabel" destination="UFc-Zi-fc9" id="2XG-Jp-DtU"/>
-                        <outlet property="notesAndRemarksTextField" destination="Hje-Nr-aWs" id="Nbc-eJ-0mX"/>
+                        <outlet property="noteAndRemarksTextView" destination="eor-mg-8ea" id="h7A-Dy-cJo"/>
                         <outlet property="scrollView" destination="fF2-F1-5se" id="cMe-x9-hvH"/>
                         <outlet property="stackView" destination="Nzd-gn-AkL" id="3uL-Xk-Kbd"/>
                     </connections>
@@ -411,6 +420,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p28-IB-SCD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
