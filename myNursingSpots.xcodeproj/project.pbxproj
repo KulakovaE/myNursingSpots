@@ -12,6 +12,7 @@
 		1848DC8E22CEA10500FFCD3F /* Cosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8D22CEA10500FFCD3F /* Cosmos.swift */; };
 		1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */; };
 		1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */; };
+		1863AF7422DA08E0002451D2 /* SpotDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */; };
 		18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */; };
 		18D67E4922D4DFED00614EFA /* PlaceholderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */; };
 		18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */; };
@@ -35,6 +36,7 @@
 		1848DC8D22CEA10500FFCD3F /* Cosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosmos.swift; sourceTree = "<group>"; };
 		1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalPresentationController.swift; sourceTree = "<group>"; };
 		1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalTransitioningDelegate.swift; sourceTree = "<group>"; };
+		1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailsViewController.swift; sourceTree = "<group>"; };
 		18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		18D93D0322CCA4ED00735860 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */,
 				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
 				18D93CF722C4D7E700735860 /* ListViewController.swift */,
 				1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */,
@@ -257,6 +260,7 @@
 				18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */,
 				18D93D0E22CCDB4F00735860 /* SpinnerViewController.swift in Sources */,
 				1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */,
+				1863AF7422DA08E0002451D2 /* SpotDetailsViewController.swift in Sources */,
 				18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
     var longPressGestureRecognizer: UILongPressGestureRecognizer?
     var spots: [Spot] = []
     var resultSearchController: UISearchController? = nil
-   // var spotCandidate: MKPlacemark? = nil
+    private var detailsTransitioningDelegate: InteractiveModalTransitioningDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,36 +195,30 @@ extension MapViewController: MKMapViewDelegate {
         let identifier = "SpotAnnotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-        if annotationView == nil {
+        //if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = false
             
-        } else {
-            annotationView?.annotation = annotation
-        }
+//        } else {
+//            annotationView?.annotation = annotation
+//        }
         
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-//        guard let studentInformation = view.annotation as? StudentAnnotationInfo,
-//            let mediaUrlPath = studentInformation.subtitle,
-//            let mediaUrl = URL(string: mediaUrlPath),
-//            UIApplication.shared.canOpenURL(mediaUrl) else {
-//                DispatchQueue.main.async {
-//                    self.showAlert(message: "This URL is not valid!")
-//                }
-//                return
-//        }
-//
-//        let vc = SFSafariViewController(url: mediaUrl)
-//        vc.delegate = self
-//        present(vc, animated: true)
-    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
         if let annotation = view.annotation as? SpotAnnotation {
+            mapView.deselectAnnotation(annotation, animated: true)
             let spot = annotation.spot
+            if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
+                spotDetailVC.spot = spot
+                detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: spotDetailVC)
+                spotDetailVC.modalPresentationStyle = .custom
+                spotDetailVC.transitioningDelegate = detailsTransitioningDelegate
+                present(spotDetailVC, animated: true)
+            }
         }
     }
 }
