@@ -23,6 +23,18 @@ class ComposerViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     var selectedImages: [UIImage] = []
+    var selectedImagesData: NSSet {
+        get {
+            var set = NSSet()
+            for image in selectedImages {
+            
+                if let data = image.pngData() {
+                    set.adding(data)
+                }
+            }
+            return set
+        }
+    }
     @IBOutlet var noteAndRemarksTextView: UITextView!
   
     override func viewDidLoad() {
@@ -35,6 +47,7 @@ class ComposerViewController: UIViewController {
         setupNotesAndRemarksTextView()
         hideKeyboardWhenTappedOnView()
         setupKeyboardNotifications()
+        setupRatingControls()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -42,7 +55,13 @@ class ComposerViewController: UIViewController {
         self.collectionView.reloadData()
     }
     
-   private func setupNotesAndRemarksTextView() {
+    private func setupRatingControls() {
+        self.babyFacilitiesRating.rating = 1
+        self.hygieneRating.rating = 1
+        self.comfortAndPrivacyRating.rating = 1
+    }
+    
+    private func setupNotesAndRemarksTextView() {
         self.noteAndRemarksTextView.layer.borderWidth = 1
         self.noteAndRemarksTextView.layer.borderColor = UIColor.lightGray.cgColor
         self.noteAndRemarksTextView.delegate = self
@@ -90,6 +109,30 @@ class ComposerViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func saveReview() {
+        guard let placemark = placemark else {return}
+        let newSpot = Spot(context: DataController.shared.viewContext)
+        newSpot.latitude = placemark.coordinate.latitude
+        newSpot.longitude = placemark.coordinate.longitude
+        
+        let review = Review(context: DataController.shared.viewContext)
+        
+        review.addToPhotos(selectedImagesData)
+        review.address = addressLabel.text
+        review.name = nameLabel.text
+        review.notes = noteAndRemarksTextView.text
+        review.babyFacilitiesRating = Int16(babyFacilitiesRating.rating)
+        review.hygieneRating = Int16(hygieneRating.rating)
+        review.comfortAndPrivacyRating = Int16(comfortAndPrivacyRating.rating)
+        newSpot.review = review
+        do {
+            try DataController.shared.viewContext.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print(error)
+        }
     }
 }
 

@@ -10,6 +10,8 @@
 		1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */; };
 		1848DC8A22CE924400FFCD3F /* MKPlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8922CE924400FFCD3F /* MKPlacemarkExtension.swift */; };
 		1848DC8E22CEA10500FFCD3F /* Cosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8D22CEA10500FFCD3F /* Cosmos.swift */; };
+		1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */; };
+		1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */; };
 		18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */; };
 		18D67E4922D4DFED00614EFA /* PlaceholderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */; };
 		18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */; };
@@ -31,6 +33,8 @@
 		1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		1848DC8922CE924400FFCD3F /* MKPlacemarkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemarkExtension.swift; sourceTree = "<group>"; };
 		1848DC8D22CEA10500FFCD3F /* Cosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosmos.swift; sourceTree = "<group>"; };
+		1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalPresentationController.swift; sourceTree = "<group>"; };
+		1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalTransitioningDelegate.swift; sourceTree = "<group>"; };
 		18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1863AF6E22DA07BF002451D2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */,
+				1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		18D93CD422C4D62100735860 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +107,7 @@
 				18D93CE022C4D62100735860 /* AppDelegate.swift */,
 				18D93CE422C4D62100735860 /* Main.storyboard */,
 				18D93CEF22C4D62100735860 /* Info.plist */,
+				1863AF6E22DA07BF002451D2 /* Presentation */,
 				18D93D0022CCA4B000735860 /* Model */,
 				18D93D0222CCA4E300735860 /* View */,
 				18D93D0322CCA4ED00735860 /* Controller */,
@@ -233,6 +247,7 @@
 				1848DC8A22CE924400FFCD3F /* MKPlacemarkExtension.swift in Sources */,
 				18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */,
 				1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */,
+				1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
 				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,
 				18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */,
@@ -241,6 +256,7 @@
 				1848DC8E22CEA10500FFCD3F /* Cosmos.swift in Sources */,
 				18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */,
 				18D93D0E22CCDB4F00735860 /* SpinnerViewController.swift in Sources */,
+				1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */,
 				18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

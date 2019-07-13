@@ -352,7 +352,11 @@
                         <viewLayoutGuide key="safeArea" id="APv-nk-88N"/>
                     </view>
                     <navigationItem key="navigationItem" id="XJY-cx-eZZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TbC-TN-8pO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TbC-TN-8pO">
+                            <connections>
+                                <action selector="saveReview" destination="zc3-fC-Ep5" id="4qv-RC-ccz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

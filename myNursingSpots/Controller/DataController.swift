@@ -13,18 +13,20 @@ class DataController {
     
     static let shared = DataController()
     
+    let persistentContainer:NSPersistentContainer
+    
     private init () {
         persistentContainer = NSPersistentContainer(name: "myNursingSpots")
         backgroundContext = persistentContainer.newBackgroundContext()
     }
-    
-    let persistentContainer:NSPersistentContainer
     
     var viewContext:NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
     let backgroundContext:NSManagedObjectContext!
+    
+    
     
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true
@@ -44,12 +46,4 @@ class DataController {
         }
     }
 }
-//func saveContext() {
-//if container.viewContext.hasChanges {
- //   do {
-  //      try container.viewContext.save()
-//    } catch {
-  //      print("An error occurred while saving: \(error)")
- //   }
-//}
-//}
+

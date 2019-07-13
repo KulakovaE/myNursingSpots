@@ -23,13 +23,13 @@ class MapViewController: UIViewController {
     var longPressGestureRecognizer: UILongPressGestureRecognizer?
     var spots: [Spot] = []
     var resultSearchController: UISearchController? = nil
-    var spotCandidate: MKPlacemark? = nil
+   // var spotCandidate: MKPlacemark? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkLocationServices()
-        self.spots = fetchData()
+        
         setupResultSearchController()
         setupSearchBar()
         setupLogo()
@@ -37,7 +37,9 @@ class MapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.spots = fetchData()
         displayData(spots: self.spots)
+        
     }
     
     private func setupLogo() {
@@ -87,7 +89,8 @@ class MapViewController: UIViewController {
     func displayData(spots: [Spot]) {
         let annotations = spots.map { spot -> SpotAnnotation in
             let coordinate = CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude)
-            let annotation = SpotAnnotation(coordinate: coordinate, spot: spot)
+            var annotation = SpotAnnotation(coordinate: coordinate, spot: spot)
+            annotation.title = spot.review?.name ?? nil
             return annotation
         }
         
@@ -138,20 +141,20 @@ class MapViewController: UIViewController {
         }
     }
     
-   func addAnnotation(for coordinate: CLLocationCoordinate2D) {
-
-        let newSpot = Spot(context: DataController.shared.viewContext)
-        newSpot.latitude = coordinate.latitude
-        newSpot.longitude = coordinate.longitude
-
-       if let _ = try? DataController.shared.viewContext.save() {
-            self.spots.append(newSpot)
-            let annotation = SpotAnnotation(coordinate: CLLocationCoordinate2D(latitude: newSpot.latitude, longitude: newSpot.longitude), spot: newSpot)
-            mapView.addAnnotation(annotation)
-        } else {
-         showAlert(title: "Warning", message: "Could not create new spot, please try again.")
-        }
-    }
+//   func addAnnotation(for coordinate: CLLocationCoordinate2D) {
+//
+//        let newSpot = Spot(context: DataController.shared.viewContext)
+//        newSpot.latitude = coordinate.latitude
+//        newSpot.longitude = coordinate.longitude
+//
+//       if let _ = try? DataController.shared.viewContext.save() {
+//            self.spots.append(newSpot)
+//            let annotation = SpotAnnotation(coordinate: CLLocationCoordinate2D(latitude: newSpot.latitude, longitude: newSpot.longitude), spot: newSpot)
+//            mapView.addAnnotation(annotation)
+//        } else {
+//         showAlert(title: "Warning", message: "Could not create new spot, please try again.")
+//        }
+//    }
     
     func showAlert(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -181,6 +184,47 @@ extension MapViewController: HandleMapSearch {
         if let composerViewController = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
             composerViewController.placemark = placemark
             navigationController?.pushViewController(composerViewController, animated: true)
+        }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is SpotAnnotation else { return nil }
+        
+        let identifier = "SpotAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = false
+            
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        guard let studentInformation = view.annotation as? StudentAnnotationInfo,
+//            let mediaUrlPath = studentInformation.subtitle,
+//            let mediaUrl = URL(string: mediaUrlPath),
+//            UIApplication.shared.canOpenURL(mediaUrl) else {
+//                DispatchQueue.main.async {
+//                    self.showAlert(message: "This URL is not valid!")
+//                }
+//                return
+//        }
+//
+//        let vc = SFSafariViewController(url: mediaUrl)
+//        vc.delegate = self
+//        present(vc, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? SpotAnnotation {
+            let spot = annotation.spot
         }
     }
 }

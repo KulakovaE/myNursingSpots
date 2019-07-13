@@ -20,8 +20,8 @@
         <relationship name="review" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Review" inverseName="spot" inverseEntity="Review" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Spot" positionX="-311.58984375" positionY="34.25" width="128" height="88"/>
-        <element name="Review" positionX="-63" positionY="0" width="128" height="163"/>
         <element name="Photo" positionX="97.19921875" positionY="41.671875" width="128" height="73"/>
+        <element name="Review" positionX="-63" positionY="0" width="128" height="165"/>
+        <element name="Spot" positionX="-311.58984375" positionY="34.25" width="128" height="88"/>
     </elements>
 </model>
