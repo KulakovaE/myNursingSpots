@@ -211,8 +211,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No images are added." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-uG-3MR">
-                                                                    <rect key="frame" x="4" y="60" width="112" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No images are added." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-uG-3MR">
+                                                                    <rect key="frame" x="-24" y="-10.5" width="168" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -220,11 +220,10 @@
                                                             </subviews>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstItem="tcw-uG-3MR" firstAttribute="centerX" secondItem="Ve7-H2-teS" secondAttribute="centerX" id="8Nq-of-eOz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="tcw-uG-3MR" secondAttribute="trailing" constant="4" id="Pus-BN-TeY"/>
                                                             <constraint firstItem="tcw-uG-3MR" firstAttribute="centerY" secondItem="Ve7-H2-teS" secondAttribute="centerY" id="WU9-Pk-69u"/>
-                                                            <constraint firstItem="tcw-uG-3MR" firstAttribute="leading" secondItem="Ve7-H2-teS" secondAttribute="leading" constant="4" id="fW7-uv-FIu"/>
+                                                            <constraint firstItem="tcw-uG-3MR" firstAttribute="centerX" secondItem="Ve7-H2-teS" secondAttribute="centerX" id="y3j-GJ-c9a"/>
                                                         </constraints>
+                                                        <size key="customSize" width="120" height="120"/>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -241,14 +240,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eor-mg-8ea">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eor-mg-8ea">
                                                         <rect key="frame" x="16" y="28.5" width="382" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="GSZ-3Y-UX5"/>
+                                                            <constraint firstAttribute="height" priority="750" constant="50" id="GSZ-3Y-UX5"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
@@ -392,24 +391,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tI5-PT-A4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1113" y="3"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ihV-4Y-QwO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oHF-Tq-jXA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CwW-vP-y0I">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lFX-ee-k8m" kind="relationship" relationship="rootViewController" id="XWm-ja-Mvf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GbJ-Nw-a4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1500.0000000000002" y="-358.25892857142856"/>
         </scene>
         <!--Map-->
         <scene sceneID="Pwq-cH-zBc">

@@ -30,9 +30,11 @@ class ComposerViewController: UIViewController {
         guard let placemark = placemark else {return}
         nameLabel.text = placemark.name
         addressLabel.text = placemark.parseAddress()
+        
         configureMapView(placemark: placemark)
         setupNotesAndRemarksTextView()
-
+        hideKeyboardWhenTappedOnView()
+        setupKeyboardNotifications()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -43,6 +45,7 @@ class ComposerViewController: UIViewController {
    private func setupNotesAndRemarksTextView() {
         self.noteAndRemarksTextView.layer.borderWidth = 1
         self.noteAndRemarksTextView.layer.borderColor = UIColor.lightGray.cgColor
+        self.noteAndRemarksTextView.delegate = self
     }
     
     func configureMapView(placemark: MKPlacemark) {
@@ -136,3 +139,48 @@ extension ComposerViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
+
+extension ComposerViewController: UITextViewDelegate {
+    // MARK: Keyboard Functions
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+}
+
+extension ComposerViewController {
+    
+    func setupKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    func hideKeyboardWhenTappedOnView() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ComposerViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
