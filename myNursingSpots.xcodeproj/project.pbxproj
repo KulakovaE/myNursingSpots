@@ -93,7 +93,6 @@
 		18D93CD422C4D62100735860 = {
 			isa = PBXGroup;
 			children = (
-				1863AF7722DB9F99002451D2 /* launchScreenLogo.png */,
 				18D93CDF22C4D62100735860 /* myNursingSpots */,
 				18D93CDE22C4D62100735860 /* Products */,
 				18D93CF922C4DAEE00735860 /* Frameworks */,
@@ -146,6 +145,7 @@
 			children = (
 				18D93CEA22C4D62100735860 /* Assets.xcassets */,
 				18D93CEC22C4D62100735860 /* LaunchScreen.storyboard */,
+				1863AF7722DB9F99002451D2 /* launchScreenLogo.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -164,13 +164,13 @@
 		18D93D0322CCA4ED00735860 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */,
 				18D93CF522C4D7AF00735860 /* MapViewController.swift */,
+				1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */,
 				18D93CF722C4D7E700735860 /* ListViewController.swift */,
 				1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */,
 				18D93CFE22CC9CD300735860 /* ComposerViewController.swift */,
-				18D93D0422CCA58100735860 /* DataController.swift */,
 				18D93D0D22CCDB4F00735860 /* SpinnerViewController.swift */,
+				18D93D0422CCA58100735860 /* DataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

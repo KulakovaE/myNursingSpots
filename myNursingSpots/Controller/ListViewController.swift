@@ -2,7 +2,7 @@
 //  ListViewController.swift
 //  myNursingSpots
 //
-//  Created by Darko Kulakov on 2019-06-27.
+//  Created by Elena Kulakova on 2019-06-27.
 //  Copyright © 2019 Elena Kulakova. All rights reserved.
 //
 
@@ -68,6 +68,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             let calculatedAvgRating = (review.babyFacilitiesRating + review.hygieneRating + review.comfortAndPrivacyRating) / 3
             cell.rating.rating = Double(calculatedAvgRating)
             cell.rating.text = "\(calculatedAvgRating)"
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let spotLocation = CLLocation(latitude: self.spots[indexPath.row].latitude, longitude: self.spots[indexPath.row].longitude)
             let myLocation = CLLocation(latitude: appDelegate.myLocation?.latitude ?? 0, longitude: appDelegate.myLocation?.longitude ?? 0)

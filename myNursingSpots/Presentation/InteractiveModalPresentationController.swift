@@ -2,8 +2,8 @@
 //  InteractiveModalPresentationController.swift
 //  CustomPresentation
 //
-//  Created by Darko Kulakov on 2019-07-06.
-//  Copyright © 2019 Darko Kulakov. All rights reserved.
+//  Created by Elena Kulakova on 2019-07-06.
+//  Copyright © 2019 Elena Kulakova. All rights reserved.
 //
 
 import UIKit

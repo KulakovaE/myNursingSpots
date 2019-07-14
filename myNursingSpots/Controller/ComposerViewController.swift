@@ -2,7 +2,7 @@
 //  ComposerViewController.swift
 //  myNursingSpots
 //
-//  Created by Darko Kulakov on 2019-07-03.
+//  Created by Elena Kulakova on 2019-07-03.
 //  Copyright © 2019 Elena Kulakova. All rights reserved.
 //
 
