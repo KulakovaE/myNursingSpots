@@ -10,5 +10,4 @@ import UIKit
 
 class ImageViewCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
-    
 }

@@ -23,16 +23,17 @@ class ComposerViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     var selectedImages: [UIImage] = []
-    var selectedImagesData: NSSet {
+    var selectedImagesData: Data? {
         get {
-            var set = NSSet()
+            var array: [Data] = []
             for image in selectedImages {
             
                 if let data = image.pngData() {
-                    set.adding(data)
+                    array.append(data)
                 }
             }
-            return set
+            
+            return try? NSKeyedArchiver.archivedData(withRootObject: array, requiringSecureCoding: false)
         }
     }
     @IBOutlet var noteAndRemarksTextView: UITextView!
@@ -119,13 +120,16 @@ class ComposerViewController: UIViewController {
         
         let review = Review(context: DataController.shared.viewContext)
         
-        review.addToPhotos(selectedImagesData)
         review.address = addressLabel.text
         review.name = nameLabel.text
         review.notes = noteAndRemarksTextView.text
         review.babyFacilitiesRating = Int16(babyFacilitiesRating.rating)
         review.hygieneRating = Int16(hygieneRating.rating)
         review.comfortAndPrivacyRating = Int16(comfortAndPrivacyRating.rating)
+        if let selectedImagesData = selectedImagesData {
+             review.images = selectedImagesData
+        }
+       
         newSpot.review = review
         do {
             try DataController.shared.viewContext.save()

@@ -13,6 +13,8 @@
 		1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */; };
 		1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */; };
 		1863AF7422DA08E0002451D2 /* SpotDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */; };
+		1863AF7622DB6200002451D2 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7522DB6200002451D2 /* ListTableViewCell.swift */; };
+		1863AF7822DB9F9A002451D2 /* launchScreenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1863AF7722DB9F99002451D2 /* launchScreenLogo.png */; };
 		18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */; };
 		18D67E4922D4DFED00614EFA /* PlaceholderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */; };
 		18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */; };
@@ -37,6 +39,8 @@
 		1863AF6F22DA07FF002451D2 /* InteractiveModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalPresentationController.swift; sourceTree = "<group>"; };
 		1863AF7122DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveModalTransitioningDelegate.swift; sourceTree = "<group>"; };
 		1863AF7322DA08E0002451D2 /* SpotDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailsViewController.swift; sourceTree = "<group>"; };
+		1863AF7522DB6200002451D2 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		1863AF7722DB9F99002451D2 /* launchScreenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreenLogo.png; sourceTree = "<group>"; };
 		18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		18D93CD422C4D62100735860 = {
 			isa = PBXGroup;
 			children = (
+				1863AF7722DB9F99002451D2 /* launchScreenLogo.png */,
 				18D93CDF22C4D62100735860 /* myNursingSpots */,
 				18D93CDE22C4D62100735860 /* Products */,
 				18D93CF922C4DAEE00735860 /* Frameworks */,
@@ -151,6 +156,7 @@
 				1848DC8D22CEA10500FFCD3F /* Cosmos.swift */,
 				18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */,
 				18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */,
+				1863AF7522DB6200002451D2 /* ListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1863AF7822DB9F9A002451D2 /* launchScreenLogo.png in Resources */,
 				18D93CEE22C4D62100735860 /* LaunchScreen.storyboard in Resources */,
 				18D93CEB22C4D62100735860 /* Assets.xcassets in Resources */,
 				18D93CE622C4D62100735860 /* Main.storyboard in Resources */,
@@ -250,6 +257,7 @@
 				1848DC8A22CE924400FFCD3F /* MKPlacemarkExtension.swift in Sources */,
 				18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */,
 				1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */,
+				1863AF7622DB6200002451D2 /* ListTableViewCell.swift in Sources */,
 				1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
 				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,

@@ -141,20 +141,6 @@ class MapViewController: UIViewController {
         }
     }
     
-//   func addAnnotation(for coordinate: CLLocationCoordinate2D) {
-//
-//        let newSpot = Spot(context: DataController.shared.viewContext)
-//        newSpot.latitude = coordinate.latitude
-//        newSpot.longitude = coordinate.longitude
-//
-//       if let _ = try? DataController.shared.viewContext.save() {
-//            self.spots.append(newSpot)
-//            let annotation = SpotAnnotation(coordinate: CLLocationCoordinate2D(latitude: newSpot.latitude, longitude: newSpot.longitude), spot: newSpot)
-//            mapView.addAnnotation(annotation)
-//        } else {
-//         showAlert(title: "Warning", message: "Could not create new spot, please try again.")
-//        }
-//    }
     
     func showAlert(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -167,10 +153,10 @@ class MapViewController: UIViewController {
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.last else {return}
-//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-//        mapView.setRegion(region, animated: true)
+        guard let location = locations.last else {return}
+        let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.myLocation = myLocation
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

@@ -18,7 +18,7 @@ enum ModalScaleState {
 final class InteractiveModalPresentationController: UIPresentationController {
     private var presentedYOffset: CGFloat {
         get {
-            return UIScreen.main.bounds.height/2
+            return UIScreen.main.bounds.height * 0.35
         }
     }
     private var direction: CGFloat = 0
