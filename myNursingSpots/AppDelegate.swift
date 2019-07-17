@@ -19,11 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let dataController = DataController.shared
         dataController.load()
+        setCustomization()
         return true
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         try? DataController.shared.viewContext.save()
+    }
+    
+    func setCustomization() {
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Avenir", size: 17) as Any]
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Avenir", size: 17) as Any,      NSAttributedString.Key.foregroundColor: UIColor.black],
+                                     for: .normal)
+        
     }
 }
 

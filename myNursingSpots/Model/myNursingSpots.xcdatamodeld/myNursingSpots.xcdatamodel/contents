@@ -17,6 +17,6 @@
     </entity>
     <elements>
         <element name="Review" positionX="-63" positionY="0" width="128" height="163"/>
-        <element name="Spot" positionX="-311.58984375" positionY="34.25" width="128" height="88"/>
+        <element name="Spot" positionX="-311.58984375" positionY="34.25" width="128" height="90"/>
     </elements>
 </model>

@@ -20,7 +20,7 @@ class MapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 1000
-    var longPressGestureRecognizer: UILongPressGestureRecognizer?
+    var longPressGestureRecognizer: UILongPressGestureRecognizer?//waithing to be used.
     var spots: [Spot] = []
     var resultSearchController: UISearchController? = nil
     private var detailsTransitioningDelegate: InteractiveModalTransitioningDelegate?
@@ -39,7 +39,6 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         self.spots = fetchData()
         displayData(spots: self.spots)
-        
     }
     
     private func setupLogo() {
@@ -53,7 +52,6 @@ class MapViewController: UIViewController {
         imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        
     }
     
     func setupResultSearchController() {
@@ -74,7 +72,7 @@ class MapViewController: UIViewController {
         let searchBar = resultSearchController.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        
+        searchBar.barTintColor = UIColor.black
     }
     
     func fetchData() -> [Spot] {
@@ -89,7 +87,7 @@ class MapViewController: UIViewController {
     func displayData(spots: [Spot]) {
         let annotations = spots.map { spot -> SpotAnnotation in
             let coordinate = CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude)
-            var annotation = SpotAnnotation(coordinate: coordinate, spot: spot)
+            let annotation = SpotAnnotation(coordinate: coordinate, spot: spot)
             annotation.title = spot.review?.name ?? nil
             return annotation
         }
@@ -141,13 +139,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    
     func showAlert(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-    
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -162,7 +158,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
        checkLocationAuthorization()
     }
-    
 }
 
 extension MapViewController: HandleMapSearch {
@@ -181,17 +176,12 @@ extension MapViewController: MKMapViewDelegate {
         let identifier = "SpotAnnotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-        //if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.image = UIImage(named: "pin")
             annotationView?.canShowCallout = false
-            
-//        } else {
-//            annotationView?.annotation = annotation
-//        }
-        
+
         return annotationView
     }
-    
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         

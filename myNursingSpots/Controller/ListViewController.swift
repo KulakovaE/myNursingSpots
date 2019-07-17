@@ -67,12 +67,23 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.address.text = review.address
             let calculatedAvgRating = (review.babyFacilitiesRating + review.hygieneRating + review.comfortAndPrivacyRating) / 3
             cell.rating.rating = Double(calculatedAvgRating)
+            cell.rating.isUserInteractionEnabled = false
             cell.rating.text = "\(calculatedAvgRating)"
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let spotLocation = CLLocation(latitude: self.spots[indexPath.row].latitude, longitude: self.spots[indexPath.row].longitude)
             let myLocation = CLLocation(latitude: appDelegate.myLocation?.latitude ?? 0, longitude: appDelegate.myLocation?.longitude ?? 0)
-            cell.distance.text = "Distance: \(String(format: "%.1f",spotLocation.distance(from: myLocation)/1000)) km"
+            
+            let fullString = NSMutableAttributedString(string:"Distance: \(String(format: "%.1f",spotLocation.distance(from: myLocation)/1000)) km  ")
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = UIImage(named: "walkingMan.png")
+            let image1String = NSAttributedString(attachment: image1Attachment)
+            fullString.append(image1String)
+            fullString.addAttribute(.foregroundColor, value: UIColor.lightGray, range: NSRange(location: 0, length: fullString.length))
+            
+            cell.distance.attributedText = fullString
+            
+           // cell.distance.text = "Distance: \(String(format: "%.1f",spotLocation.distance(from: myLocation)/1000)) km"
         }
         return cell
     }

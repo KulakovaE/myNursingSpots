@@ -31,6 +31,7 @@ class SpotDetailsViewController: UIViewController {
         self.address.text = review.address
         let calculatedAvgRating = (review.babyFacilitiesRating + review.hygieneRating + review.comfortAndPrivacyRating) / 3
         self.averageRating.rating = Double(calculatedAvgRating)
+        self.averageRating.isUserInteractionEnabled = false
         self.averageRating.text = "\(calculatedAvgRating)"
         self.notesAndRemarks.text = review.notes
         
@@ -80,6 +81,18 @@ extension SpotDetailsViewController: UICollectionViewDelegate, UICollectionViewD
             cell.imageView.image = self.images[indexPath.row]
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            detailViewController.imageToDisplay = self.images[indexPath.row]
+            
+            self.definesPresentationContext = true
+            let navVC = UINavigationController(rootViewController: detailViewController)
+            navVC.isNavigationBarHidden = true
+            navVC.modalPresentationStyle = .overFullScreen
+            self.present(navVC, animated: true, completion: nil)
+        }
     }
 }
 

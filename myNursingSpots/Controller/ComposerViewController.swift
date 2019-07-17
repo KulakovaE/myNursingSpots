@@ -28,7 +28,7 @@ class ComposerViewController: UIViewController {
             var array: [Data] = []
             for image in selectedImages {
             
-                if let data = image.pngData() {
+                if let data = image.jpegData(compressionQuality: 0.7) {
                     array.append(data)
                 }
             }
@@ -171,6 +171,17 @@ extension ComposerViewController: UICollectionViewDelegate, UICollectionViewData
             cell.imageView.image = self.selectedImages[indexPath.row]
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if selectedImages.count == 0 {
+            return
+        }
+        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            detailViewController.imageToDisplay = self.selectedImages[indexPath.row]
+            self.present(detailViewController, animated: true, completion: nil)
+        }
     }
     
 }

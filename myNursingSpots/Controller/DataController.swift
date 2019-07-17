@@ -11,7 +11,7 @@ import CoreData
 
 class DataController {
     
-    static let shared = DataController()
+    static let shared = DataController() //Singleton, created only once, used everywhere.
     
     let persistentContainer:NSPersistentContainer
     
@@ -25,8 +25,6 @@ class DataController {
     }
     
     let backgroundContext:NSManagedObjectContext!
-    
-    
     
     func configureContexts() {
         viewContext.automaticallyMergesChangesFromParent = true

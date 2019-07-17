@@ -13,8 +13,6 @@ enum ModalScaleState {
     case interaction
 }
 
-
-
 final class InteractiveModalPresentationController: UIPresentationController {
     private var presentedYOffset: CGFloat {
         get {
@@ -133,5 +131,4 @@ final class InteractiveModalPresentationController: UIPresentationController {
             dimmingView.removeFromSuperview()
         }
     }
-    
 }
