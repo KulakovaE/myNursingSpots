@@ -162,10 +162,27 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: HandleMapSearch {
     func didSelectResult(placemark: MKPlacemark) {
-        if let composerViewController = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
-            composerViewController.placemark = placemark
-            navigationController?.pushViewController(composerViewController, animated: true)
+    
+        let spots = self.spots.filter { spot -> Bool in
+            return spot.latitude == placemark.location?.coordinate.latitude &&
+                spot.longitude == placemark.location?.coordinate.longitude
         }
+        
+        if let spot = spots.first {
+            if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
+                spotDetailVC.spot = spot
+                detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: spotDetailVC)
+                spotDetailVC.modalPresentationStyle = .custom
+                spotDetailVC.transitioningDelegate = detailsTransitioningDelegate
+                present(spotDetailVC, animated: true)
+            }
+        } else {
+            if let composerViewController = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
+                composerViewController.placemark = placemark
+                navigationController?.pushViewController(composerViewController, animated: true)
+            }
+        }
+        
     }
 }
 
@@ -177,7 +194,11 @@ extension MapViewController: MKMapViewDelegate {
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.image = UIImage(named: "pin")
+            let image = UIImage(named: "pin")
+        if let image = image {
+            annotationView?.image = image
+            annotationView?.centerOffset = CGPoint(x: 0, y: -image.size.height/2)
+        }
             annotationView?.canShowCallout = false
 
         return annotationView
