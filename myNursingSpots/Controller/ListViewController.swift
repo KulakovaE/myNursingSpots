@@ -88,6 +88,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: false)
+        
+        if UIApplication.shared.statusBarOrientation.isLandscape && UIDevice.current.iPhone {
+            return
+        }
+        
         let spot = self.spots[indexPath.row]
         if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
             spotDetailVC.spot = spot
