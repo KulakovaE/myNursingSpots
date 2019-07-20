@@ -18,6 +18,8 @@ class SpotDetailsViewController: UIViewController {
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet var notesAndRemarks: UITextView!
     @IBOutlet var grayLine: UIView!
+    @IBOutlet var directionButton: UIButton!
+    @IBOutlet var editButton: UIButton!
     var images: [UIImage] = []
     
     override func viewDidLoad() {
@@ -26,7 +28,9 @@ class SpotDetailsViewController: UIViewController {
         self.grayLine.clipsToBounds = false
         self.grayLine.layer.borderWidth = 2
         self.grayLine.layer.borderColor = UIColor.lightGray.cgColor
+        
         guard let spot = spot, let review = spot.review else { return }
+        
         self.name.text = review.name
         self.address.text = review.address
         let calculatedAvgRating = (review.babyFacilitiesRating + review.hygieneRating + review.comfortAndPrivacyRating) / 3
@@ -34,6 +38,11 @@ class SpotDetailsViewController: UIViewController {
         self.averageRating.isUserInteractionEnabled = false
         self.averageRating.text = "\(calculatedAvgRating)"
         self.notesAndRemarks.text = review.notes
+        setupNotesAndRemarksTextView()
+        directionButton.layer.cornerRadius = directionButton.frame.size.height/2
+        directionButton.clipsToBounds = true
+        
+        self.notesAndRemarks.isEditable = false
         
         if let imageData = review.images {
             if let imageDataArray: [Data] = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData) as? [Data] {
@@ -45,6 +54,11 @@ class SpotDetailsViewController: UIViewController {
             }
         }
         self.imagesCollectionView.delegate = self
+    }
+    
+    private func setupNotesAndRemarksTextView() {
+        self.notesAndRemarks.layer.borderWidth = 1
+        self.notesAndRemarks.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func showDirections(_ sender: Any) {
@@ -84,9 +98,13 @@ extension SpotDetailsViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.images.count == 0 {
+            return
+        }
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailViewController.imageToDisplay = self.images[indexPath.row]
             
+           
             self.definesPresentationContext = true
             let navVC = UINavigationController(rootViewController: detailViewController)
             navVC.isNavigationBarHidden = true

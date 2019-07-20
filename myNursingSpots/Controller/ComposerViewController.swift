@@ -57,9 +57,9 @@ class ComposerViewController: UIViewController {
     }
     
     private func setupRatingControls() {
-        self.babyFacilitiesRating.rating = 1
-        self.hygieneRating.rating = 1
-        self.comfortAndPrivacyRating.rating = 1
+        self.babyFacilitiesRating.rating = 5
+        self.hygieneRating.rating = 5
+        self.comfortAndPrivacyRating.rating = 5
     }
     
     private func setupNotesAndRemarksTextView() {
@@ -76,6 +76,7 @@ class ComposerViewController: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         mapView.addAnnotation(annotation)
+        
     }
     
     @IBAction func addImages(_ sender: Any) {
@@ -218,7 +219,7 @@ extension ComposerViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
             }
@@ -239,6 +240,25 @@ extension ComposerViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension ComposerViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "SpotAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        let image = UIImage(named: "pin")
+        if let image = image {
+            annotationView?.image = image
+            annotationView?.centerOffset = CGPoint(x: 0, y: -image.size.height/2)
+        }
+        annotationView?.canShowCallout = false
+        
+        return annotationView
     }
 }
 

@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Avenir", size: 17) as Any,      NSAttributedString.Key.foregroundColor: UIColor.black],
                                      for: .normal)
         
+        UINavigationBar.appearance().tintColor = .black
+        
     }
 }
 

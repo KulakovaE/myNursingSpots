@@ -82,8 +82,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             fullString.addAttribute(.foregroundColor, value: UIColor.lightGray, range: NSRange(location: 0, length: fullString.length))
             
             cell.distance.attributedText = fullString
-            
-           // cell.distance.text = "Distance: \(String(format: "%.1f",spotLocation.distance(from: myLocation)/1000)) km"
         }
         return cell
     }
@@ -110,6 +108,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             // Delete the row from the data source
             let spotToDelete = spots[indexPath.row]
             DataController.shared.viewContext.delete(spotToDelete)
+            try? DataController.shared.viewContext.save()
             spots.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

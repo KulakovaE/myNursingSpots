@@ -179,6 +179,7 @@ extension MapViewController: HandleMapSearch {
         } else {
             if let composerViewController = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
                 composerViewController.placemark = placemark
+                
                 navigationController?.pushViewController(composerViewController, animated: true)
             }
         }
