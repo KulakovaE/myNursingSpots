@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let dataController = DataController.shared
         dataController.load()
-        setCustomization()
+        setCustomizations()
         return true
     }
 
@@ -27,15 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try? DataController.shared.viewContext.save()
     }
     
-    func setCustomization() {
+    func setCustomizations() {
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Avenir", size: 17) as Any]
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Avenir", size: 17) as Any,      NSAttributedString.Key.foregroundColor: UIColor.black],
                                      for: .normal)
-        
         UINavigationBar.appearance().tintColor = .black
-        
     }
 }
 

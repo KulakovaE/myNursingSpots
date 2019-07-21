@@ -13,6 +13,4 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet var address: UILabel!
     @IBOutlet var rating: CosmosView!
     @IBOutlet var distance: UILabel!
-    
-
 }

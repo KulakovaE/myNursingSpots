@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import CoreData
 
-
 class ListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var spots: [Spot] = []
@@ -18,7 +17,6 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.tableView.rowHeight = UITableView.automaticDimension
         setupLogo()
     }
@@ -28,7 +26,6 @@ class ListViewController: UIViewController {
         self.spots = fetchData()
         self.tableView.reloadData()
     }
-    
     
     func fetchData() -> [Spot] {
         let fetchRequest: NSFetchRequest<Spot> = Spot.fetchRequest()
@@ -50,9 +47,7 @@ class ListViewController: UIViewController {
         imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
-        
     }
-    
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -108,7 +103,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source

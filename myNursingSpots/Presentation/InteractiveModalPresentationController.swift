@@ -19,6 +19,7 @@ final class InteractiveModalPresentationController: UIPresentationController {
             return UIScreen.main.bounds.height * 0.25
         }
     }
+    
     private var direction: CGFloat = 0
     private var state: ModalScaleState = .interaction
     

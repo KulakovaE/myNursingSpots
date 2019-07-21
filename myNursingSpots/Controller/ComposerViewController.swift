@@ -71,7 +71,6 @@ class ComposerViewController: UIViewController {
                     }
                 }
             }
-            
         }
     }
     
@@ -100,7 +99,6 @@ class ComposerViewController: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         mapView.addAnnotation(annotation)
-        
     }
     
     @IBAction func addImages(_ sender: Any) {
@@ -148,7 +146,7 @@ class ComposerViewController: UIViewController {
             }
             
             try? DataController.shared.viewContext.save()
-           navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
             return
         }
         
@@ -217,7 +215,7 @@ extension ComposerViewController: UICollectionViewDelegate, UICollectionViewData
         if selectedImages.count == 0 {
             return
         }
-        
+    
         self.selectedImages.remove(at: indexPath.row)
         self.collectionView.reloadData()
     }
@@ -237,15 +235,12 @@ extension ComposerViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ComposerViewController: UITextViewDelegate {
-    // MARK: Keyboard Functions
-    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
         }
         return true
     }
-    
 }
 
 extension ComposerViewController {

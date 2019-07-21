@@ -33,7 +33,6 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         checkLocationServices()
-        
         setupResultSearchController()
         setupSearchBar()
         setupLogo()
@@ -197,7 +196,6 @@ extension MapViewController: HandleMapSearch {
                 navigationController?.pushViewController(composerViewController, animated: true)
             }
         }
-        
     }
 }
 
@@ -206,15 +204,14 @@ extension MapViewController: MKMapViewDelegate {
         guard annotation is SpotAnnotation else { return nil }
         
         let identifier = "SpotAnnotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            let image = UIImage(named: "pin")
+        let image = UIImage(named: "pin")
         if let image = image {
-            annotationView?.image = image
-            annotationView?.centerOffset = CGPoint(x: 0, y: -image.size.height/2)
+            annotationView.image = image
+            annotationView.centerOffset = CGPoint(x: 0, y: -image.size.height/2)
         }
-            annotationView?.canShowCallout = false
+        annotationView.canShowCallout = false
 
         return annotationView
     }
@@ -224,6 +221,7 @@ extension MapViewController: MKMapViewDelegate {
         if let annotation = view.annotation as? SpotAnnotation {
             mapView.deselectAnnotation(annotation, animated: true)
             let spot = annotation.spot
+            
             if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
                 spotDetailVC.spot = spot
                 spotDetailVC.editDelegate = self

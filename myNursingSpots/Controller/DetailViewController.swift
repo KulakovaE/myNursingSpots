@@ -14,7 +14,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scroll: UIScrollView!
     var imageToDisplay: UIImage?
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let imageToDisplay = imageToDisplay else {return}
