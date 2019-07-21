@@ -32,23 +32,47 @@ class ComposerViewController: UIViewController {
                     array.append(data)
                 }
             }
-            
             return try? NSKeyedArchiver.archivedData(withRootObject: array, requiringSecureCoding: false)
         }
     }
+    
+    var spot: Spot?
     @IBOutlet var noteAndRemarksTextView: UITextView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let placemark = placemark else {return}
-        nameLabel.text = placemark.name
-        addressLabel.text = placemark.parseAddress()
+        if let placemark = placemark {
+            nameLabel.text = placemark.name
+            addressLabel.text = placemark.parseAddress()
+            configureMapView(placemark: placemark)
+        }
         
-        configureMapView(placemark: placemark)
         setupNotesAndRemarksTextView()
         hideKeyboardWhenTappedOnView()
         setupKeyboardNotifications()
         setupRatingControls()
+        
+        if let spot = spot, let review = spot.review {
+            let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude))
+            nameLabel.text = review.name
+            addressLabel.text = review.address
+            configureMapView(placemark: placemark)
+            noteAndRemarksTextView.text = review.notes
+            babyFacilitiesRating.rating = Double(review.babyFacilitiesRating)
+            hygieneRating.rating = Double(review.hygieneRating)
+            comfortAndPrivacyRating.rating = Double(review.comfortAndPrivacyRating)
+            
+            if let imageData = review.images {
+                if let imageDataArray: [Data] = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(imageData) as? [Data] {
+                    for imageData in imageDataArray {
+                        if let image = UIImage(data: imageData) {
+                            self.selectedImages.append(image)
+                        }
+                    }
+                }
+            }
+            
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -114,6 +138,20 @@ class ComposerViewController: UIViewController {
     }
     
     @IBAction func saveReview() {
+        if let spot = spot, let review = spot.review {
+            review.notes = noteAndRemarksTextView.text
+            review.babyFacilitiesRating = Int16(babyFacilitiesRating.rating)
+            review.hygieneRating = Int16(hygieneRating.rating)
+            review.comfortAndPrivacyRating = Int16(comfortAndPrivacyRating.rating)
+            if let selectedImagesData = selectedImagesData {
+                review.images = selectedImagesData
+            }
+            
+            try? DataController.shared.viewContext.save()
+           navigationController?.popViewController(animated: true)
+            return
+        }
+        
         guard let placemark = placemark else {return}
         let newSpot = Spot(context: DataController.shared.viewContext)
         newSpot.latitude = placemark.coordinate.latitude
@@ -179,10 +217,9 @@ extension ComposerViewController: UICollectionViewDelegate, UICollectionViewData
         if selectedImages.count == 0 {
             return
         }
-        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            detailViewController.imageToDisplay = self.selectedImages[indexPath.row]
-            self.present(detailViewController, animated: true, completion: nil)
-        }
+        
+        self.selectedImages.remove(at: indexPath.row)
+        self.collectionView.reloadData()
     }
     
 }

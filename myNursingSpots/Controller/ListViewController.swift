@@ -96,6 +96,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let spot = self.spots[indexPath.row]
         if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
             spotDetailVC.spot = spot
+            spotDetailVC.editDelegate = self
             detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: spotDetailVC)
             spotDetailVC.modalPresentationStyle = .custom
             spotDetailVC.transitioningDelegate = detailsTransitioningDelegate
@@ -116,6 +117,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             try? DataController.shared.viewContext.save()
             spots.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+}
+
+extension ListViewController: HandleEditReview {
+    func editReview(for spot: Spot) {
+        if let composerVC = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
+            composerVC.spot = spot
+            navigationController?.pushViewController(composerVC, animated: true)
         }
     }
 }

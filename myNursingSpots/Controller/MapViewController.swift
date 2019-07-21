@@ -15,6 +15,10 @@ protocol HandleMapSearch {
     func didSelectResult(placemark: MKPlacemark)
 }
 
+protocol HandleEditReview {
+    func editReview(for spot: Spot)
+}
+
 class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     
@@ -160,6 +164,15 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+extension MapViewController: HandleEditReview {
+    func editReview(for spot: Spot) {
+        if let composerVC = storyboard?.instantiateViewController(withIdentifier: "ComposerViewController") as? ComposerViewController {
+            composerVC.spot = spot
+            navigationController?.pushViewController(composerVC, animated: true)
+        }
+    }
+}
+
 extension MapViewController: HandleMapSearch {
     func didSelectResult(placemark: MKPlacemark) {
     
@@ -171,6 +184,7 @@ extension MapViewController: HandleMapSearch {
         if let spot = spots.first {
             if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
                 spotDetailVC.spot = spot
+                spotDetailVC.editDelegate = self
                 detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: spotDetailVC)
                 spotDetailVC.modalPresentationStyle = .custom
                 spotDetailVC.transitioningDelegate = detailsTransitioningDelegate
@@ -212,6 +226,7 @@ extension MapViewController: MKMapViewDelegate {
             let spot = annotation.spot
             if let spotDetailVC = storyboard?.instantiateViewController(withIdentifier: "SpotDetailsViewController") as? SpotDetailsViewController {
                 spotDetailVC.spot = spot
+                spotDetailVC.editDelegate = self
                 detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: spotDetailVC)
                 spotDetailVC.modalPresentationStyle = .custom
                 spotDetailVC.transitioningDelegate = detailsTransitioningDelegate

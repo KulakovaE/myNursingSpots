@@ -376,6 +376,9 @@
                                                 <state key="normal" title="Edit Review">
                                                     <color key="titleColor" red="0.82352941180000006" green="0.10980392160000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="editReview:" destination="ab0-XZ-IdL" eventType="touchUpInside" id="5MT-8Q-0aA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

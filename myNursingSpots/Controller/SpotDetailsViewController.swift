@@ -21,6 +21,7 @@ class SpotDetailsViewController: UIViewController {
     @IBOutlet var directionButton: UIButton!
     @IBOutlet var editButton: UIButton!
     var images: [UIImage] = []
+    var editDelegate: HandleEditReview? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,12 @@ class SpotDetailsViewController: UIViewController {
     
     override open var shouldAutorotate: Bool {
         return false
+    }
+    
+    @IBAction func editReview(_ sender: Any) {
+        guard let spot = spot else { return }
+        self.editDelegate?.editReview(for: spot)
+        dismiss(animated: false)
     }
 }
 
