@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18319ECB22E4F60800D029E5 /* FoursquareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18319ECA22E4F60800D029E5 /* FoursquareClient.swift */; };
+		18319ECD22E5BF2100D029E5 /* FoursquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18319ECC22E5BF2100D029E5 /* FoursquareViewController.swift */; };
+		18319ED122E6FA8100D029E5 /* FoursquareReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18319ED022E6FA8100D029E5 /* FoursquareReview.swift */; };
+		18319ED322E7053200D029E5 /* TipsAndReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18319ED222E7053200D029E5 /* TipsAndReviewsTableViewCell.swift */; };
+		18319ED522E70FB200D029E5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18319ED422E70FB200D029E5 /* PhotoCollectionViewCell.swift */; };
 		1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */; };
 		1848DC8A22CE924400FFCD3F /* MKPlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8922CE924400FFCD3F /* MKPlacemarkExtension.swift */; };
 		1848DC8E22CEA10500FFCD3F /* Cosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848DC8D22CEA10500FFCD3F /* Cosmos.swift */; };
@@ -16,6 +21,7 @@
 		1863AF7622DB6200002451D2 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7522DB6200002451D2 /* ListTableViewCell.swift */; };
 		1863AF7822DB9F9A002451D2 /* launchScreenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1863AF7722DB9F99002451D2 /* launchScreenLogo.png */; };
 		1863AF7A22DF1DBA002451D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863AF7922DF1DBA002451D2 /* DetailViewController.swift */; };
+		18A67CCE22E7299700875BF4 /* PhotoPlaceholderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A67CCD22E7299700875BF4 /* PhotoPlaceholderCollectionViewCell.swift */; };
 		18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */; };
 		18D67E4922D4DFED00614EFA /* PlaceholderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */; };
 		18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */; };
@@ -33,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18319ECA22E4F60800D029E5 /* FoursquareClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareClient.swift; sourceTree = "<group>"; };
+		18319ECC22E5BF2100D029E5 /* FoursquareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareViewController.swift; sourceTree = "<group>"; };
+		18319ED022E6FA8100D029E5 /* FoursquareReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareReview.swift; sourceTree = "<group>"; };
+		18319ED222E7053200D029E5 /* TipsAndReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsAndReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		18319ED422E70FB200D029E5 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1848DC8622CDFB6300FFCD3F /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		1848DC8922CE924400FFCD3F /* MKPlacemarkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemarkExtension.swift; sourceTree = "<group>"; };
 		1848DC8D22CEA10500FFCD3F /* Cosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosmos.swift; sourceTree = "<group>"; };
@@ -42,6 +53,7 @@
 		1863AF7522DB6200002451D2 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		1863AF7722DB9F99002451D2 /* launchScreenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreenLogo.png; sourceTree = "<group>"; };
 		1863AF7922DF1DBA002451D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18A67CCD22E7299700875BF4 /* PhotoPlaceholderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoPlaceholderCollectionViewCell.swift; path = ../Model/PhotoPlaceholderCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCollectionViewCell.swift; sourceTree = "<group>"; };
 		18D67E4A22D4E43D00614EFA /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
@@ -136,6 +148,9 @@
 			children = (
 				18D93CE722C4D62100735860 /* myNursingSpots.xcdatamodeld */,
 				18D93D0622CCAA5F00735860 /* SpotAnnotation.swift */,
+				18319ECA22E4F60800D029E5 /* FoursquareClient.swift */,
+				18319ED022E6FA8100D029E5 /* FoursquareReview.swift */,
+				18319ED422E70FB200D029E5 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,7 +170,9 @@
 			children = (
 				1848DC8D22CEA10500FFCD3F /* Cosmos.swift */,
 				18D67E4622D4D96700614EFA /* ImageViewCollectionViewCell.swift */,
+				18319ED222E7053200D029E5 /* TipsAndReviewsTableViewCell.swift */,
 				18D67E4822D4DFED00614EFA /* PlaceholderCollectionViewCell.swift */,
+				18A67CCD22E7299700875BF4 /* PhotoPlaceholderCollectionViewCell.swift */,
 				1863AF7522DB6200002451D2 /* ListTableViewCell.swift */,
 			);
 			path = View;
@@ -171,6 +188,7 @@
 				1863AF7922DF1DBA002451D2 /* DetailViewController.swift */,
 				18D93CFE22CC9CD300735860 /* ComposerViewController.swift */,
 				18D93D0422CCA58100735860 /* DataController.swift */,
+				18319ECC22E5BF2100D029E5 /* FoursquareViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,21 +271,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D93CE922C4D62100735860 /* myNursingSpots.xcdatamodeld in Sources */,
+				18319ECD22E5BF2100D029E5 /* FoursquareViewController.swift in Sources */,
 				18D93D0522CCA58100735860 /* DataController.swift in Sources */,
 				1848DC8A22CE924400FFCD3F /* MKPlacemarkExtension.swift in Sources */,
 				18D93CFF22CC9CD300735860 /* ComposerViewController.swift in Sources */,
 				1848DC8722CDFB6300FFCD3F /* LocationSearchTable.swift in Sources */,
 				1863AF7622DB6200002451D2 /* ListTableViewCell.swift in Sources */,
 				1863AF7222DA080D002451D2 /* InteractiveModalTransitioningDelegate.swift in Sources */,
+				18A67CCE22E7299700875BF4 /* PhotoPlaceholderCollectionViewCell.swift in Sources */,
 				18D93CE122C4D62100735860 /* AppDelegate.swift in Sources */,
+				18319ED522E70FB200D029E5 /* PhotoCollectionViewCell.swift in Sources */,
 				18D93CF822C4D7E700735860 /* ListViewController.swift in Sources */,
 				18D93CF622C4D7AF00735860 /* MapViewController.swift in Sources */,
 				1863AF7A22DF1DBA002451D2 /* DetailViewController.swift in Sources */,
 				18D67E4922D4DFED00614EFA /* PlaceholderCollectionViewCell.swift in Sources */,
+				18319ECB22E4F60800D029E5 /* FoursquareClient.swift in Sources */,
 				18D93D0722CCAA5F00735860 /* SpotAnnotation.swift in Sources */,
+				18319ED122E6FA8100D029E5 /* FoursquareReview.swift in Sources */,
 				1848DC8E22CEA10500FFCD3F /* Cosmos.swift in Sources */,
 				18D67E4B22D4E43D00614EFA /* UIDeviceExtension.swift in Sources */,
 				1863AF7022DA07FF002451D2 /* InteractiveModalPresentationController.swift in Sources */,
+				18319ED322E7053200D029E5 /* TipsAndReviewsTableViewCell.swift in Sources */,
 				1863AF7422DA08E0002451D2 /* SpotDetailsViewController.swift in Sources */,
 				18D67E4722D4D96700614EFA /* ImageViewCollectionViewCell.swift in Sources */,
 			);

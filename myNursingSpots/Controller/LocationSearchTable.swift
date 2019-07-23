@@ -21,9 +21,15 @@ extension LocationSearchTable: UISearchResultsUpdating {
         perform(#selector(self.search(_:)), with: searchController, afterDelay: 0.75)
     }
     
+    func showAlert(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
     @objc func search(_ searchController: UISearchController) {
-        guard let mapView = mapView, let searchBarText = searchController.searchBar.text else { return }
-
+        guard let mapView = mapView, let searchBarText = searchController.searchBar.text, searchBarText != "" else { return }
+    
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchBarText
         request.region = mapView.region
@@ -37,7 +43,10 @@ extension LocationSearchTable: UISearchResultsUpdating {
         search.start { (response, error) in
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                guard let response = response else { return }
+                guard let response = response else {
+                    self.showAlert(title: "Warning", message: "Something went wrong. Try again or check your network settings.")
+                    return
+                }
                 self.matchingItems = response.mapItems
                 self.tableView.reloadData()
             }

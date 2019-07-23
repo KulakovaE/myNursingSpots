@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class ComposerViewController: UIViewController {
 
@@ -22,6 +23,8 @@ class ComposerViewController: UIViewController {
     @IBOutlet var comfortAndPrivacyRating: CosmosView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
+    @IBOutlet var checkOnFoursquare: UIButton!
+    
     var selectedImages: [UIImage] = []
     var selectedImagesData: Data? {
         get {
@@ -38,7 +41,8 @@ class ComposerViewController: UIViewController {
     
     var spot: Spot?
     @IBOutlet var noteAndRemarksTextView: UITextView!
-  
+    var venueFoursquareId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let placemark = placemark {
@@ -47,10 +51,13 @@ class ComposerViewController: UIViewController {
             configureMapView(placemark: placemark)
         }
         
+        checkOnFoursquare.isEnabled = false
+        checkOnFoursquare.backgroundColor = UIColor.lightGray
         setupNotesAndRemarksTextView()
         hideKeyboardWhenTappedOnView()
         setupKeyboardNotifications()
         setupRatingControls()
+        searchForIdOnFoursquare()
         
         if let spot = spot, let review = spot.review {
             let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude))
@@ -79,6 +86,32 @@ class ComposerViewController: UIViewController {
         self.collectionView.reloadData()
     }
     
+    private func searchForIdOnFoursquare() {
+        var location: CLLocationCoordinate2D?
+        var name: String?
+        
+        if let placemark = placemark, let locationFS = placemark.location {
+            location = CLLocationCoordinate2D(latitude: locationFS.coordinate.latitude, longitude: locationFS.coordinate.longitude)
+            name = placemark.name
+        } else if let spot = spot {
+            location = CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude)
+            name = spot.review?.name
+        }
+        
+        guard let locationFS = location, let nameFS = name?.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {return}
+        FoursquareClient.searchForVenueId(location: locationFS, name: nameFS) { (venueId, error) in
+            guard let venueId = venueId else {return}
+            self.venueFoursquareId = venueId
+            DispatchQueue.main.async {
+                self.checkOnFoursquare.isEnabled = true
+                self.checkOnFoursquare.backgroundColor = UIColor(red: 210.0/255.0,
+                                                                 green: 28.0/255.0,
+                                                                 blue: 92.0/255.0,
+                                                                 alpha:  1)
+            }
+        }
+    }
+    
     private func setupRatingControls() {
         self.babyFacilitiesRating.rating = 5
         self.hygieneRating.rating = 5
@@ -105,6 +138,16 @@ class ComposerViewController: UIViewController {
         presentImagePickingOptions()
     }
 
+    @IBAction func checkOnFoursquare(_ sender: Any) {
+        
+        if let foursquareVC = storyboard?.instantiateViewController(withIdentifier: "FoursquareViewController") as? FoursquareViewController {
+            foursquareVC.venueId = venueFoursquareId
+            foursquareVC.venueName = nameLabel.text
+            navigationController?.pushViewController(foursquareVC, animated: true)
+            
+        }
+    }
+    
     func presentImagePickingOptions() {
         let alertVC = UIAlertController(title: "", message: "Choose an image source", preferredStyle: .actionSheet)
         
