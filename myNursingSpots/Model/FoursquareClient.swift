@@ -169,6 +169,10 @@ class FoursquareClient {
                         if errorCode == 200 {
                             if let responsejson = json["response"] as? [String:Any] {
                                 if let venues = responsejson["venues"] as? [[String:Any]] {
+                                    if venues.count == 0 {
+                                        completion(nil, error)
+                                        return
+                                    }
                                     for venue in venues {
                                         if let name = venue["name"] as? String {
                                             if name == name {

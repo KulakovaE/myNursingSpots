@@ -110,8 +110,6 @@ extension SpotDetailsViewController: UICollectionViewDelegate, UICollectionViewD
         }
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailViewController.imageToDisplay = self.images[indexPath.row]
-            
-           
             self.definesPresentationContext = true
             let navVC = UINavigationController(rootViewController: detailViewController)
             navVC.isNavigationBarHidden = true
